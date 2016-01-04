@@ -9,19 +9,19 @@ object NewControlStructure extends App {
   println(twice(_ + 1, 5)) // 7.0
 
   // loan pattern
-  def withPrintWriter(file: File, op: PrintWriter => Unit): Unit = {
-    val writer = new PrintWriter(file)
-    try {
-      op(writer)
-    } finally {
-      writer.close()
-    }
-  }
-
-  withPrintWriter(
-    new File("data.txt"),
-    writer => writer.println(new Date())
-  )
+//  def withPrintWriter(file: File, op: PrintWriter => Unit): Unit = {
+//    val writer = new PrintWriter(file)
+//    try {
+//      op(writer)
+//    } finally {
+//      writer.close()
+//    }
+//  }
+//
+//  withPrintWriter(
+//    new File("data.txt"),
+//    writer => writer.println(new Date())
+//  )
 
   // loan pattern(curried)
   def withPrintWriter(file: File)(op: PrintWriter => Unit): Unit = {
