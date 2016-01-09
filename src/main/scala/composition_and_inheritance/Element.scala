@@ -16,6 +16,8 @@ abstract class Element {
       ) yield line1 + line2
     )
   }
+
+  override def toString = contents mkString "\n"
 }
 
 //class ArrayElement(conts: Array[String]) extends Element {
