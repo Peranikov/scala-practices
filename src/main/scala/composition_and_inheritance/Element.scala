@@ -3,10 +3,10 @@ import Element.elem
 
 abstract class Element {
   def contents: Array[String]
-  def height: Int = contents.length
   def width: Int = if (height == 0) 0 else contents(0).length
+  def height: Int = contents.length
 
-  def adove(that: Element): Element = {
+  def above(that: Element): Element = {
     elem(this.contents ++ that.contents)
   }
 
@@ -17,6 +17,22 @@ abstract class Element {
       ) yield line1 + line2
     )
   }
+
+  def widen(w: Int): Element =
+    if (w <= width) this
+    else {
+      val left = elem(' ', (w - width) / 2, height)
+      val right = elem(' ', w - width - left.width, height)
+      left beside this beside right
+    }
+
+  def heighten(h: Int): Element =
+    if (h <= height) this
+    else {
+      val top = elem(' ', width, (h - height) / 2)
+      val bot = elem(' ', width, h - height - top.height)
+      top above this above bot
+    }
 
   override def toString = contents mkString "\n"
 }
