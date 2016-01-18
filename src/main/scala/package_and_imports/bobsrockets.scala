@@ -16,7 +16,15 @@ package bobsrockets {
       val booster3 = new _root_.package_and_imports.launch.Booster3
     }
 
-    class Navigator {
+    private[bobsrockets] class Navigator {
+      protected[navigation] def useStarChart() {}
+
+      class LegOfJourney {
+        private[Navigator] val distance = 100
+      }
+
+      private[this] var speed = 200
+
       // bobsrockets.navigation.StarMapと書かなくてよい
       val map = new StarMap
     }
@@ -37,6 +45,11 @@ package bobsrockets {
   }
 
   package launch {
+    import navigation._
+    object Vehicle {
+      private [launch] val guide = new Navigator
+    }
+
     class Booster2
   }
 }
