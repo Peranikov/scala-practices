@@ -59,4 +59,21 @@ object PatternMatchSample extends App {
   println(generalSize("abc"))
   println(generalSize(Map(1 -> "a", 2 -> "b")))
   println(generalSize(math.Pi))
+
+  def tupleDemo(expr: Any) = {
+    expr match {
+      case (a, b, c) => "matched " + a + b + c
+      case _ =>
+    }
+  }
+
+  println(tupleDemo(("a ", 3, "-tuple")))
+
+  val user2 = User(UserId(1), 20, "Jan")
+  println(
+    user2 match {
+      case User(id @ UserId(1), 20, "Jan") => id
+      case _ =>
+    }
+  )
 }
