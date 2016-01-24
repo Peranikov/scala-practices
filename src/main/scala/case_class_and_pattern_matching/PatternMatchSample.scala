@@ -76,4 +76,10 @@ object PatternMatchSample extends App {
       case _ =>
     }
   )
+
+  println(
+    UserId(1) match {
+      case UserId(x) if x == 1 => "id = 1"
+    }
+  )
 }
