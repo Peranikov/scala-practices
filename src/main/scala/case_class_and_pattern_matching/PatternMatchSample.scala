@@ -82,4 +82,17 @@ object PatternMatchSample extends App {
       case UserId(x) if x == 1 => "id = 1"
     }
   )
+
+  sealed abstract class Animal
+  case class Dog() extends Animal
+  case class Cat() extends Animal
+  case class Sheep() extends Animal
+
+  def howl(a: Animal): String = {
+    a match {
+      case Dog() => "Bow wow"
+      case Cat() => "Mew mew"
+//      case Sheep() => "Maa maa" // warn: match may not be exhaustive.
+    }
+  }
 }
