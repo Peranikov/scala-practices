@@ -95,4 +95,15 @@ object PatternMatchSample extends App {
 //      case Sheep() => "Maa maa" // warn: match may not be exhaustive.
     }
   }
+
+  def matchOption(x: Option[Int]): String = {
+    x match {
+      case Some(s) => s"Some: $s"
+      case None => "None"
+    }
+  }
+
+
+  println(matchOption(Some(1)))
+  println(matchOption(None))
 }
