@@ -106,4 +106,18 @@ object PatternMatchSample extends App {
 
   println(matchOption(Some(1)))
   println(matchOption(None))
+
+  // variable pattern
+  val myTuple = (123, "abc")
+  val (number, string) = myTuple
+  println(number)
+  println(string)
+
+  case class Sample(a: String, b: Int, c: Seq[Char])
+
+  val sample = Sample("x", 100, Seq('h', 'j', 'k'))
+  val Sample(a, b, c) = sample
+  println(a)
+  println(b)
+  println(c)
 }
