@@ -120,4 +120,19 @@ object PatternMatchSample extends App {
   println(a)
   println(b)
   println(c)
+
+  // PartialFunction
+  val second: List[Int] => Int = {
+    case x :: y :: _ => y
+  }
+
+  println(second(List(5, 6, 7)))
+//  println(second(List())) // scala.MatchError: List()
+
+  val partialSecond: PartialFunction[List[Int], Int] = {
+    case x :: y :: _ => y
+  }
+
+  println(partialSecond.isDefinedAt(List(5, 6, 7)))
+  println(partialSecond.isDefinedAt(List()))
 }
