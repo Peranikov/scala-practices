@@ -135,4 +135,12 @@ object PatternMatchSample extends App {
 
   println(partialSecond.isDefinedAt(List(5, 6, 7)))
   println(partialSecond.isDefinedAt(List()))
+
+  // Tuple pattern with for
+  val capitals = Map("USA" -> "NewYork", "Japan" -> "Tokyo")
+  for((country, city) <- capitals)
+    println(s"The capital of $country is $city")
+
+  val results = List(Some("apple"), None, Some("orange"))
+  for (Some(fruit) <- results) println(fruit)
 }
