@@ -15,4 +15,7 @@ object ListSample extends App {
   val abcde = List('a', 'b', 'c', 'd', 'e')
   println(abcde.last)
   println(abcde.init)
+
+  // reverse
+  println(abcde.reverse)
 }
