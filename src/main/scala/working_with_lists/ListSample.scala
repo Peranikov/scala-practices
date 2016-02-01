@@ -10,4 +10,9 @@ object ListSample extends App {
   }
 
   println(append(List.empty, List(1,2,3)))
+
+  // tail and init
+  val abcde = List('a', 'b', 'c', 'd', 'e')
+  println(abcde.last)
+  println(abcde.init)
 }
