@@ -18,4 +18,13 @@ object ListSample extends App {
 
   // reverse
   println(abcde.reverse)
+
+  // take
+  println(abcde take 3)
+
+  // drop
+  println(abcde drop 3)
+
+  // splitAt
+  println(abcde splitAt 3)
 }
