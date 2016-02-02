@@ -27,4 +27,12 @@ object ListSample extends App {
 
   // splitAt
   println(abcde splitAt 3)
+
+  // flatten
+  println(List(List(1, 2), List(3, 4), List(5, 6)).flatten)
+
+  // zip
+  println(abcde.indices zip abcde)
+  println(abcde.zipWithIndex)
+  println(abcde.zipWithIndex.unzip)
 }
